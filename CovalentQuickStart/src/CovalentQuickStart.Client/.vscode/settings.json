@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/typings": true,
+    "**/tmp": true,
+    "**/dist": true,
+    "**/project.lock.json": true
+  }
+}
