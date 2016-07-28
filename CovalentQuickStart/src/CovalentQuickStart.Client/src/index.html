@@ -9,9 +9,10 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="vendor/@covalent/core/styles/platform.css">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+    <qs-app>Loading...</qs-app>
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}

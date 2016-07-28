@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // SystemJS configuration file, see links for more information
 // https://github.com/systemjs/systemjs
@@ -21,27 +21,61 @@ const packages: any = {
  **********************************************************************************************/
 const barrels: string[] = [
   // Angular specific barrels.
-  '@angular/core',
   '@angular/common',
   '@angular/compiler',
+  '@angular/core',
   '@angular/forms',
   '@angular/http',
-  '@angular/router',
-  '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
+  '@angular/platform-browser',
+  '@angular/router',
 
   // Thirdparty barrels.
+  '@covalent/core',
+  '@covalent/file-upload',
+  '@covalent/highlight',
+  '@covalent/markdown',
   'rxjs',
 
   // App specific barrels.
   'app',
   'app/shared',
+  'services',
   /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
+});
+
+// Angular Material 2 Packages
+const materialPackages: string[] = [
+  'button',
+  'card',
+  'checkbox',
+  'core',
+  'grid-list',
+  'icon',
+  'input',
+  'list',
+  'menu',
+  'progress-bar',
+  'progress-circle',
+  'radio',
+  'sidenav',
+  'slide-toggle',
+  'tabs',
+  'toolbar'
+];
+
+materialPackages.forEach(function(pkg: string): void {
+  let name: string = '@angular2-material/' + pkg;
+  packages[name] = {
+    defaultExtension: 'js',
+    format: 'cjs',
+    main: pkg + '.js',
+  };
 });
 
 /** Type declaration for ambient System. */
@@ -51,8 +85,10 @@ declare var System: any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
-    'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    '@angular2-material': 'vendor/@angular2-material',
+    '@covalent': 'vendor/@covalent',
+    'main': 'main.js',
+    'rxjs': 'vendor/rxjs'
   },
   packages: cliSystemConfigPackages
 });

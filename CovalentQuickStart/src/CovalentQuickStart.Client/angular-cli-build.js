@@ -21,12 +21,16 @@ module.exports = function(defaults) {
       'zone.js/dist/**/*.+(js|js.map)'
     ],
     polyfills: [
-      'vendor/@covalent/core/styles/**/*',
       'vendor/es6-shim/es6-shim.js',
       'vendor/reflect-metadata/Reflect.js',
       'vendor/showdown/dist/showdown.js',
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js'
-    ]
+    ],
+    sassCompiler: {
+      "cacheExclude": [/\/_[^\/]+$/],
+      "includePaths": [
+      ]
+    }
   });
 };

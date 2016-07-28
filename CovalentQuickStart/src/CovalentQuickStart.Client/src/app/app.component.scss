@@ -9,7 +9,7 @@ $md-accent-opacity: rgba(255, 64, 129, 0.12);
 $md-warn: #FF9100;
 
 /* :host /deep/ lets shadowdom style child elements */
-:host /deep/ {
+:host {
     /* customize logo height and width */
     .md-icon-logo {
         height: 50px;
@@ -27,7 +27,7 @@ $md-warn: #FF9100;
             background-color: $md-accent;
         }
     }
-    [md-fab], 
+    [md-fab],
     [md-mini-fab],
     .md-radio-checked .md-radio-inner-circle,
     .md-checkbox-checked .md-checkbox-background {
